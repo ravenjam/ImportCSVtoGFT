@@ -8,7 +8,7 @@ client_secret = "your_client_secret"
 redirect_uri = "redirect_uri"
 api_key = "your_api_key"
 
-class FusionTableHandler:
+class CSVToGFTHandler:
   def __init__(self):
     self.access_token = ""
     self.params = ""
