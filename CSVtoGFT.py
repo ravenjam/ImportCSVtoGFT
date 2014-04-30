@@ -2,10 +2,11 @@
 
 import urllib2, urllib, json, simplejson, sys, httplib, csv, string
 
-client_id = your_client_id
-client_secret = your_client_secret
-redirect_uri = redirect_uri
-api_key = your_api_key
+# Get your authentication stuff from your Google account
+client_id = "your_client_id"
+client_secret = "your_client_secret"
+redirect_uri = "redirect_uri"
+api_key = "your_api_key"
 
 class ManipulateFusionTable:
   def __init__(self):
@@ -82,6 +83,7 @@ class ManipulateFusionTable:
         except:
           continue
 
+  # Send the request
   def runQuery(self, query):
     opener = urllib2.build_opener(urllib2.HTTPHandler)
     request = urllib2.Request('https://www.googleapis.com/fusiontables/v1/query?%s' % \
