@@ -86,9 +86,8 @@ class ManipulateFusionTable:
   def runQuery(self, query):
     opener = urllib2.build_opener(urllib2.HTTPHandler)
     request = urllib2.Request('https://www.googleapis.com/fusiontables/v1/query?%s' % \
-	    (urllib.urlencode({'access_token': self.access_token,
-          'sql': query})),
-    	headers={'Content-Length':0})      # Manually set length to avoid 411 error
+	    (urllib.urlencode({'access_token': self.access_token, 'sql': query})),
+    	    headers={'Content-Length':0})      # Manually set length to avoid 411 error
     request.get_method = lambda: 'POST'    # Change HTTP request method
     response = opener.open(request).read()
     return response
