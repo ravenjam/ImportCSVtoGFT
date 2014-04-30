@@ -14,8 +14,8 @@ class ManipulateFusionTable:
     self.access_token = ""
     self.params = ""
 		
-  # Authentication based on Google OAuth2
-  def main(self):
+  # Authentication based on OAuth2
+  def authentication(self):
     print "copy and paste the url below into browser address bar and hit enter"
     print "https://accounts.google.com/o/oauth2/auth?%s%s%s%s" % \
       ("client_id=%s&" % (client_id),
