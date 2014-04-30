@@ -1,5 +1,3 @@
-#!/usr/bin/python
-#
 # Copyright (C) 2011 Google Inc.
 
 import urllib2, urllib, json, simplejson, sys, httplib, csv, string
