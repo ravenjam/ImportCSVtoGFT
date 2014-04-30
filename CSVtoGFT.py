@@ -76,7 +76,6 @@ class ManipulateFusionTable:
             if (str in string.lowercase) | (str in string.uppercase):
               newTweet.append(str)
               newString = "".join(newTweet)
-
           query = "INSERT INTO %s(Latitude, Longitude, Tweets) VALUES"\
             "(%.5f, %.5f, '%s')" % (tableId, long, lat, newString)  # Single quotes
           self.runQuery(query)
