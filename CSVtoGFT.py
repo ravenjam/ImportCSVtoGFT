@@ -78,12 +78,12 @@ class CSVToGFTHandler:
               newString = "".join(newTweet)
           query = "INSERT INTO %s(Latitude, Longitude, Tweets) VALUES"\
             "(%.5f, %.5f, '%s')" % (tableId, long, lat, newString)  # Single quotes
-          self.runQuery(query)
+          self.applyQuery(query)
         except:
           continue
 
   # Send the request
-  def runQuery(self, query):
+  def applyQuery(self, query):
     opener = urllib2.build_opener(urllib2.HTTPHandler)
     request = urllib2.Request('https://www.googleapis.com/fusiontables/v1/query?%s' % \
 	    (urllib.urlencode({'access_token': self.access_token, 'sql': query})),
