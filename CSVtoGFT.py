@@ -58,7 +58,7 @@ class CSVToGFTHandler:
     cols_and_datatypes = ",".join(["'%s': %s" % (col[0], col[1]) 
                                    for col in table.get(table_name).items()])
     query = "CREATE TABLE '%s' (%s)" % (table_name, cols_and_datatypes)
-    response = json.loads(self.runQuery(query))
+    response = json.loads(self.applyQuery(query))
     tableId = response.values()[1][0][0]
     return tableId
   
