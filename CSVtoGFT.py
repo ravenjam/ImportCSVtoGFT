@@ -8,7 +8,7 @@ client_secret = "your_client_secret"
 redirect_uri = "redirect_uri"
 api_key = "your_api_key"
 
-class CSVToGFTHandler:
+class Csv2GftHandler:
   def __init__(self):
     self.access_token = ""
     self.params = ""
@@ -31,16 +31,14 @@ class CSVToGFTHandler:
       "grant_type": "authorization_code"
     })
 
-    serv_req = urllib2.Request(url="https://accounts.google.com/o/oauth2/token",
-       data=data)
+    serv_req = urllib2.Request(url="https://accounts.google.com/o/oauth2/token", data=data)
 
     serv_resp = urllib2.urlopen(serv_req)
     response = serv_resp.read()
     tokens = simplejson.loads(response)
     access_token = tokens["access_token"]
     self.access_token = access_token
-    self.params = "?key=%s&access_token=%s" % \
-      (api_key, self.access_token)
+    self.params = "?key=%s&access_token=%s" % (api_key, self.access_token)
     
   # Create the table based on the table name(user input)
   def createTable(self):
