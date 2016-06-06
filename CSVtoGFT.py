@@ -1,4 +1,4 @@
-# Copyright (C) 2011 Google Inc.
+# Copyright (C) 2016 Ouya Zhang.
 
 import urllib2, urllib, json, simplejson, sys, httplib, csv, string
 
