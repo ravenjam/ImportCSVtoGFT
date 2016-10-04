@@ -1,5 +1,3 @@
-ImportCSVtoGFT
-
 Contributor: Ouya Zhang
 
 This project demonstrates how to import the CSV File to Google Fusion Table in Python
